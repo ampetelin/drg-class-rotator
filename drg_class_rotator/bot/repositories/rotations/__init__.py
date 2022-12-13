@@ -1,0 +1,1 @@
+from bot.repositories.rotations.repository import RotationRepository

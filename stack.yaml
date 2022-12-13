@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  discord_bot:
+    image: ghcr.io/ampetelin/drg-class-rotator:latest
+    environment:
+      - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN:?error}
+      - LOG_LEVEL
+      - REDIS_DSN=${REDIS_DSN:?error}
+      - REDIS_ROTATION_LIFETIME=${REDIS_ROTATION_LIFETIME:?error}
+      - SENTRY_DSN
+    networks:
+      - backend
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  redis:
+    image: redis:7.0.6
+    networks:
+      - backend
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+networks:
+  backend:
+    name: drg_bot_rotator_backend
