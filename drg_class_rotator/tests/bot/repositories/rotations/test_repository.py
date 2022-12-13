@@ -41,7 +41,7 @@ class TestRotationRepository:
         )
 
         key = self.repository._create_key(discord_guild_id, discord_user_id)
-        self.repository.redis.get.assert_called_once_with(key=key)
+        self.repository.redis.get.assert_called_once_with(name=key)
 
         parsed_mock = parse_raw_as(List[Dwarf], redis_value)
         assert value == parsed_mock

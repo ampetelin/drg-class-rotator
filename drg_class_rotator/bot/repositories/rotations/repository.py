@@ -25,7 +25,7 @@ class RotationRepository:
             Список дворфов, входящих в ротацию
         """
         key = self._create_key(discord_guild_id=discord_guild_id, discord_user_id=discord_user_id)
-        value = await self.redis.get(key=key)
+        value = await self.redis.get(name=key)
         if not value:
             return []
 
