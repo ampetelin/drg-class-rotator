@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://res.cloudinary.com/cocktail-api/image/upload/v1670930793/drf_class_rotator/DRGClassRotator_2_govxio.png" alt="DRG Class Rotator">
+  <img src="https://res.cloudinary.com/ampetelin/image/upload/v1670930793/drf_class_rotator/DRGClassRotator_2_govxio.png" alt="DRG Class Rotator">
 </p>
 
 ---
